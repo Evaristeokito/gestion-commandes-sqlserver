@@ -5,6 +5,7 @@ Projet de démonstration pour une base de données de gestion des commandes sous
 ## Contenu
 
 - `sql/gestion_commandes.sql` : crée la base `GestionCommandes`, ses cinq tables, leurs relations et index, puis ajoute 50 lignes fictives dans chaque table.
+- `sql/requetes_sous_requetes_cte.sql` : propose 10 requêtes d'analyse en lecture seule, avec sous-requêtes, CTE et fonctions de classement.
 - Les données sont destinées à la démonstration. Les adresses électroniques utilisent `example.com`; les produits, prix et transactions ne représentent pas des ventes réelles.
 
 ## Exécution
@@ -16,6 +17,10 @@ Projet de démonstration pour une base de données de gestion des commandes sous
 Le script crée `GestionCommandes` si elle n’existe pas. Il refuse de continuer si l’une des cinq tables cibles existe déjà; il ne remplace donc pas les tables ou leurs données. Les insertions se font dans une transaction et le script vérifie les 50 lignes par table ainsi que la cohérence des montants.
 
 Pour charger les données dans une base vide portant un autre nom, modifiez les deux références à `GestionCommandes` en tête du script avant exécution.
+
+## Requêtes d'analyse
+
+Le fichier `sql/requetes_sous_requetes_cte.sql` contient 10 requêtes `SELECT` à exécuter dans SSMS ou Azure Data Studio après avoir sélectionné la base `GestionCommandes`. Elles illustrent les sous-requêtes, `EXISTS`, les CTE, les fonctions `RANK`, `ROW_NUMBER` et `LAG`. Elles ne modifient pas les données.
 
 ## Modèle
 
